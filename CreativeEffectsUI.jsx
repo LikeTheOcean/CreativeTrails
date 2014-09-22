@@ -50,7 +50,7 @@ function main() {
 	var myInputGroup2 = myWindow.add ("group");
 	myInputGroup2.add ("statictext", undefined, "Creative Style :");
 	myInputGroup2.alignment = "left";
-	var creativeStyle = myInputGroup2.add ("dropdownlist", undefined, ["Comet Style - left to right", "Comet Style - right to left","Saucer Style","Space ship Style","Baseball Bat - left to right","Baseball Bat right to left","RESET","SKIP"]);
+	var creativeStyle = myInputGroup2.add ("dropdownlist", undefined, ["Comet Style - left to right", "Comet Style - right to left","Saucer Style","Space ship Style","Baseball Bat - left to right","Baseball Bat - right to left","RESET","SKIP"]);
 	creativeStyle.selection = 0;
 	 
 	//Separator
@@ -67,6 +67,9 @@ function main() {
 	myButtonGroup2.alignment = "right";
 	var HelpButton = myButtonGroup2.add ("button", undefined, "Help");
 	HelpButton.onClick = function () {openInBrowser("http://www.LikeTheOcean.com/");}
+	
+	var scriptFolder = new File(WhoAmI()).parent;
+	var myLogoImg = myWindow.add ("image", undefined, File (scriptFolder+'/LTO_logo_240.png'));
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	// Identify when the dropdownlist is changed and act on the same - Creative Style
@@ -88,7 +91,7 @@ function main() {
 			case "Baseball Bat - left to right":
 				creativeStyleValue = 5;		
 				break;
-			case "Baseball Bat right to left": 
+			case "Baseball Bat - right to left": 
 				creativeStyleValue = 6;			
 				break;
 			case "RESET": 
@@ -447,4 +450,15 @@ function addConfigLayer(docRef, text) {
 	docRef.activeLayer.name = "Config Settings";
 	docRef.activeLayer.textItem.justification = Justification.LEFT;
 	docRef.activeLayer.visible = false;
+}
+
+function WhoAmI() {
+   var where;
+   try {
+      var FORCEERROR = FORCERRROR;
+   }
+   catch( err ) {
+      where = File(err.fileName);
+   }
+   return where;
 }
