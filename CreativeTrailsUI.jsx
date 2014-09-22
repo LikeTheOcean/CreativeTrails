@@ -113,6 +113,10 @@ HelpButton.onClick = function () {
 	openInBrowser("http://www.LikeTheOcean.com/");
 }
 
+var scriptFolder = new File(WhoAmI()).parent;
+var myLogoImg = myWindow.add ("image", undefined, File (scriptFolder+'/LTO_logo_240.png'));
+
+
 ///////////////////////////////////////////////////////////////////////////////////////
 // Identify when the dropdownlist is changed and act on the same
 templateDropdown.onChange = function (){
@@ -472,4 +476,15 @@ function addConfigLayer(docRef, text) {
 	docRef.activeLayer.name = "Config Settings";
 	docRef.activeLayer.textItem.justification = Justification.LEFT;
 	docRef.activeLayer.visible = false;
+}
+
+function WhoAmI() {
+   var where;
+   try {
+      var FORCEERROR = FORCERRROR;
+   }
+   catch( err ) {
+      where = File(err.fileName);
+   }
+   return where;
 }
