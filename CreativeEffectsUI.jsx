@@ -66,10 +66,13 @@ function main() {
 	var myButtonGroup2 = myWindow.add ("group");
 	myButtonGroup2.alignment = "right";
 	var HelpButton = myButtonGroup2.add ("button", undefined, "Help");
-	HelpButton.onClick = function () {openInBrowser("http://www.LikeTheOcean.com/");}
+	HelpButton.onClick = function () {openInBrowser("http://liketheocean.com/night-photography/make-your-star-trails-awesome#CreativeEffectsUI");}
 	
 	var scriptFolder = new File(WhoAmI()).parent;
 	var myLogoImg = myWindow.add ("image", undefined, File (scriptFolder+'/LTO_logo_240.png'));
+	myLogoImg.onClick = function () {
+	openInBrowser("http://www.LikeTheOcean.com/");
+	}
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	// Identify when the dropdownlist is changed and act on the same - Creative Style
@@ -131,7 +134,7 @@ function main() {
 		configText = removeConfigLayer(docRef);
 		// Call the main function
 		mainProg(docRef,blendModeValue,creativeStyleValue);
-		var settingText = "StarTrailCreativeUI 6.0\r";
+		var settingText = "Creative Effects UI 2.0\r";
 		settingText = settingText.concat("Blend Mode     : ",blendMode.selection.text,"\r");
 		settingText = settingText.concat("Creative Style : ",creativeStyle.selection.text,"\r");
 		configText = configText.concat(settingText,"\r");
