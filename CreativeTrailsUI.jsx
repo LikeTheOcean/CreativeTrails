@@ -1,3 +1,4 @@
+
 /**  
   * @scriptName  Creative Trails UI 2.0
   * @lisence Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -110,7 +111,7 @@ var myButtonGroup2 = myWindow.add ("group");
 myButtonGroup2.alignment = "right";
 var HelpButton = myButtonGroup2.add ("button", undefined, "Help");
 HelpButton.onClick = function () {
-	openInBrowser("http://liketheocean.com/night-photography/make-your-star-trails-awesome#CreativeTrailsUI");
+	openInBrowser("http://liketheocean.com/night-photography/scripts-to-make-your-star-trails-awesome#CreativeTrailsUI");
 }
 
 var scriptFolder = new File(WhoAmI()).parent;
