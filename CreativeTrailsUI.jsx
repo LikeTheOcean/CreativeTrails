@@ -110,11 +110,14 @@ var myButtonGroup2 = myWindow.add ("group");
 myButtonGroup2.alignment = "right";
 var HelpButton = myButtonGroup2.add ("button", undefined, "Help");
 HelpButton.onClick = function () {
-	openInBrowser("http://www.LikeTheOcean.com/");
+	openInBrowser("http://liketheocean.com/night-photography/make-your-star-trails-awesome#CreativeTrailsUI");
 }
 
 var scriptFolder = new File(WhoAmI()).parent;
 var myLogoImg = myWindow.add ("image", undefined, File (scriptFolder+'/LTO_logo_240.png'));
+myLogoImg.onClick = function () {
+	openInBrowser("http://www.LikeTheOcean.com/");
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
